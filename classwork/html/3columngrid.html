@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>3columngird</title>
+    <style>
+        .three-columns-grid {
+            display: grid;
+            grid-auto-rows: 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        /* columns */
+        .three-columns-grid > * {
+            padding:1rem;
+        }
+#one {
+    background-color: yellow;
+}
+#two{
+    background-color: blue;
+}
+#three{
+    background-color: red;
+}
+
+    </style>
+</head>
+<body>
+<div class="three-columns-grid">
+    <div id="one">1</div>
+    <div id="two">2</div>
+    <div id="three">3</div>
+</div>
+</body>
+</html>

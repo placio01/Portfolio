@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Static3 column</title>
+    <style>
+        /* container */
+        .responsive-three-column-gridresponsiveive-{
+            display:block;
+        }
+
+        /* columns */
+        .responsive-three-column-grid > * {
+            padding:1rem;
+        }
+
+        /* tablet breakpoint */
+        @media (min-width:768px) {
+            .responsive-three-column-gridresponsive-three-column-gridresponsive-three-column-grid {
+                display: grid;
+                grid-auto-rows: 1fr;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+        #One{
+            background-color: rebeccapurple;
+        }
+        #two{
+            background-color: aquamarine;
+        }
+#three{
+    background-color: brown;
+}
+
+
+    </style>
+    <body>
+<div class="three-columns">
+    <div id="One">1</div>
+    <div id="two" >2</div>
+    <div id="three">3</div>
+</div>
+</body>
+</html>

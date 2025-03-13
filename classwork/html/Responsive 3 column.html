@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resonsive 3 clumn</title>
+  <style>
+    /* container */
+    .responsive-three-column-grid {
+      display:block;
+    }
+
+    /* columns */
+    .responsive-three-column-grid > * {
+      padding:1rem;
+    }
+
+    /* tablet breakpoint */
+    @media (min-width:768px) {
+      .responsive-three-column-grid {
+        display: grid;
+        grid-auto-rows: 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+    #one{
+      background-color: green;
+
+    }
+    #two
+    {
+      background-color: orange;
+    }
+    #three{
+      background-color: cyan;
+    }
+
+
+  </style>
+</head>
+<body>
+<div class="responsive-three-column-grid"></div>
+<div id="one">1</div>
+<div id="two">2</div>
+<div id="three">3</div>
+</div>
+
+</body>
+</html>
