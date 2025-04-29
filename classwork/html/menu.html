@@ -1,43 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-<link rel="stylesheet" href="menu.css">
+    <title>Calcular Subtotal</title>
 </head>
 <body>
-<h1> our menu</h1>
-<form>
-    <fieldset>
-        <legend>address</legend>
-        <label for="firstname">first name</label>
-        <input type="text" id="firstname"><br>
-        <label for="lastname">last name</label>
-        <input type="text" id="lastname"><br>
-        <label for="email">email</label>
-        <input type="email" id="email"><br>
-        <label for="phone">phone</label>
-        <input type="phone"id="phone">
-    </fieldset>
-<fieldset>
-    <legend>drinks </legend>
-    <label for="drinks">drinks</label>
-    <select id="drinks">
-        <option>coke</option>
-        <option>sprite</option>
-        <option>limone</option>
 
-    </select>
+<label for="precio1">Precio 1:</label>
+<input type="number" id="precio1" name="precio1"><br><br>
 
-    <legend>Food </legend>
-    <label for="food">food</label>
-    <select id="food">
-        <option>hot dog</option>
-        <option>hambuerger</option>
-        <option>salchipapas</option>
-</fieldset>
+<label for="precio2">Precio 2:</label>
+<input type="number" id="precio2" name="precio2"><br><br>
 
+<button onclick="calcularSubtotal()">Calcular Subtotal</button>
 
-</form>
+<p>Subtotal: <span id="subtotal"></span></p>
+
+<script>
+    function calcularSubtotal() {
+        let precio1 = parseFloat(document.getElementById("precio1").value);
+        let precio2 = parseFloat(document.getElementById("precio2").value);
+        let subtotal = precio1 + precio2;
+
+        document.getElementById("subtotal").innerHTML = subtotal;
+    }
+</script>
+
 </body>
 </html>
