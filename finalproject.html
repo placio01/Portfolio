@@ -6,10 +6,10 @@
 </head>
 <body>
 <header>
-    <h1>menu</h1>
+    <h1>MENU</h1>
     <br>
 </header>
-<div class="responsive-two-column-grid">
+<div class="column">
     <div id="one">
         <div class="item">
             <label for="a">Carne molida picante ( spicy ground beef)</label>
@@ -41,44 +41,36 @@
             <input type="number" class="amount" data-price="11.99" value="0" min="0" step="1" disabled>
         </div>
     </div>
-    <div id="two">
-
-        <div class="row">
-            <div class="columns" style="background-color: white">
-                <label for="2">Camarones (Sauteed Shrimp)</label>
-                <input type="checkbox" id="2" class="checkbox" data-price="17.99">
-                <input type="number" class="amount" data-price="17.99" value="0" min="0" step="1" disabled>
-            </div>
-            <div class="item">
-
-                <label for="3">Vegetariano (Roasted Vegetable)</label>
-                <input type="checkbox" class="checkbox" id="3" data-price="9.99">
-                <input type="number" class="amount" data-price="9.99" value="0" min="0" step="1" disabled>
-
-                <div class="item">
-                    <label for="4">Chorizo (Spicy Pork Sausage)</label>
-                    <input type="checkbox" id="4" class="checkbox" data-price="16.45">
-                    <input type="number" class="amount" data-price="16.45" value="0" min="0" step="1" disabled>
-                </div>
-
-                <div class="item">
-                    <label for="5">Pescado (Fried Tilapia)</label>
-                    <input type="checkbox" id="5" class="checkbox" data-price="29.99">
-                    <input type="number" class="amount" data-price="29.99" value="0" min="0" step="1" disabled>
-                </div>
-
-                <div class="item">
-                    <label for="6">Pollo Vegano (Sautéed Vegan Chicken)</label>
-                    <input type="checkbox" id="6" class="checkbox" data-price="11.00">
-                    <input type="number" class="amount" data-price="11.00" value="0" min="0" step="1" disabled>
-                </div>
-
-                </div>
-            </div>
+    <div id="two" class="row">
+        <div class="item">
+            <label for="2">Camarones (Sauteed Shrimp)</label>
+            <input type="checkbox" id="2" class="checkbox" data-price="17.99">
+            <input type="number" class="amount" data-price="17.99" value="0" min="0" step="1" disabled>
+        </div>
+        <div class="item">
+            <label for="3">Vegetariano (Roasted Vegetable)</label>
+            <input type="checkbox" class="checkbox" id="3" data-price="9.99">
+            <input type="number" class="amount" data-price="9.99" value="0" min="0" step="1" disabled>
+        </div>
+        <div class="item">
+            <label for="4">Chorizo (Spicy Pork Sausage)</label>
+            <input type="checkbox" id="4" class="checkbox" data-price="16.45">
+            <input type="number" class="amount" data-price="16.45" value="0" min="0" step="1" disabled>
+        </div>
+        <div class="item">
+            <label for="5">Pescado (Fried Tilapia)</label>
+            <input type="checkbox" id="5" class="checkbox" data-price="29.99">
+            <input type="number" class="amount" data-price="29.99" value="0" min="0" step="1" disabled>
+        </div>
+        <div class="item">
+            <label for="6">Pollo Vegano (Sauteed Vegan Chicken)</label>
+            <input type="checkbox" id="6" class="checkbox" data-price="11.00">
+            <input type="number" class="amount" data-price="11.00" value="0" min="0" step="1" disabled>
         </div>
     </div>
-<h2> drink</h2>
 </div>
+<h2> drink</h2>
+
 
 <div class="item">
     <label for="8">jarritos (mexican soda </label>
@@ -87,67 +79,83 @@
 </div>
 <div class="item">
     <p></p>
-    <label for="7">bottled water</label>
-    <input type="checkbox" id="7" class="checkbox" data-price="2.45">
+    <label for="9">bottled water</label>
+    <input type="checkbox" id="9" class="checkbox" data-price="2.45">
     <input type="number" class="amount" data-price="2.45" value="0" min="0" step="1" disabled>
 
 </div>
 <div class="item">
     <p></p>
-    <label for="7">horchata </label>
-    <input type="checkbox" id="7" class="checkbox" data-price="1.99">
+    <label for="10">horchata </label>
+    <input type="checkbox" id="10" class="checkbox" data-price="1.99">
     <input type="number" class="amount" data-price="1.99" value="0" min="0" step="1" disabled>
 </div>
 <div class="item">
     <p></p>
-    <label for="7">fresh orange juice </label>
-    <input type="checkbox" id="7" class="checkbox" data-price="2.99">
+    <label for="11">fresh orange juice</label>
+    <input type="checkbox" id="11" class="checkbox" data-price="2.99">
     <input type="number" class="amount" data-price="2.99" value="0" min="0" step="1" disabled>
-
 </div>
 <p class="subtotal">Subtotal: $<span id="subtotal">0.00</span></p>
 
-        <script>
-            const checkboxes = document.querySelectorAll('.checkbox');
-            const amounts = document.querySelectorAll('.amount');
-            const subtotalElement = document.getElementById('subtotal');
 
-            checkboxes.forEach(checkbox => {
-                checkbox.addEventListener('change', updateSubtotal);
-            });
-
-            amounts.forEach(amount => {
-                amount.addEventListener('input', updateSubtotal);
-            });
-
-            function updateSubtotal() {
-                let subtotal = 0;
-
-                checkboxes.forEach((checkbox, index) => {
-                    const amountInput = amounts[index];
-                    const price = parseFloat(checkbox.getAttribute('data-price'));
-                    const amount = parseInt(amountInput.value);
-
-                    if (checkbox.checked) {
-                        subtotal += price * amount;
-                    }
-                });
-
-                subtotalElement.textContent = subtotal.toFixed(2);
+<script>
+    //
+    const checkboxes = document.querySelectorAll('.checkbox');
+    // amount are 14 input
+    const amounts = document.querySelectorAll('.amount');
+    //
+    const subtotalElement = document.getElementById('subtotal');
+    //
+    checkboxes.forEach(checkbox => {
+        //
+        checkbox.addEventListener('change', updateSubtotal);
+    });
+    //
+    amounts.forEach(amount => {
+        //
+        amount.addEventListener('input', updateSubtotal);
+    });
+    //
+    function updateSubtotal() {
+        //
+        let subtotal = 0;
+        //
+        checkboxes.forEach((checkbox, index) => {
+            //
+            const amountInput = amounts[index];
+            //
+            const price = parseFloat(checkbox.getAttribute('data-price'));
+            //
+            const amount = parseInt(amountInput.value);
+            //
+            if (checkbox.checked) {
+                //
+                subtotal += price * amount;
             }
+        });
+        //
+        subtotalElement.textContent = subtotal.toFixed(2);
+    }
 
-            // Enable/Disable amount input based on checkbox status
-            checkboxes.forEach((checkbox, index) => {
-                checkbox.addEventListener('change', () => {
-                    const amountInput = amounts[index];
-                    amountInput.disabled = !checkbox.checked;
-                    if (!checkbox.checked) {
-                        amountInput.value = 0; // Reset the amount when unchecked
-                    }
-                    updateSubtotal(); // Update subtotal when the checkbox state changes
-                });
-            });
-        </script>
+    // Enable/Disable amount input based on checkbox status
+    checkboxes.forEach((checkbox, index) => {
+        //
+        checkbox.addEventListener('change', () => {
+            //
+            const amountInput = amounts[index];
+            //
+            amountInput.disabled = !checkbox.checked;
+            //
+            if (!checkbox.checked) {
+                //
+                amountInput.value = 0; // Reset the amount when unchecked
+            }
+            //
+            updateSubtotal(); // Update subtotal when the checkbox state changes
+        });
+    });
+</script>
 
 </body>
 </html>

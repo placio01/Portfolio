@@ -5,33 +5,34 @@ h1{
     color: black;
 }
 
-/*column {*/
-/*    float: left;*/
-/*    width: 50%;*/
-/*    padding: 10px;*/
-/*    height: 300px;*/
-/*}*/
-/*.row:after {*/
-/*    content: "";*/
-/*    display: table;*/
-/*    clear: both;*/
-/*}*/
-@media (min-width:768px) {
-    .responsive-two-column-grid {
-        display: grid;
-        grid-auto-rows: 1fr;
-        grid-template-columns: 1fr 1fr;
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-}
+
 
 label{
     color: black;
 }
 p{ color:black;
-   }
-body{
 
 }
+body{
+    background-color: lightgrey;
+}
 
+{
+    box-sizing: border-box;
+}
+
+
+
+/* Create two equal columns that sits next to each other */
+.column {
+    display: flex;
+    flex: 50%;
+    padding: 10px;
+    /*height: 300px; !* Should be removed. Only for demonstration *!*/
+}
+.row{
+    text-align: right;
+}
+.item{
+    display: block;
+}
