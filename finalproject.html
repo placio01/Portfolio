@@ -100,23 +100,27 @@
 
 
 <script>
-    //
+
     const checkboxes = document.querySelectorAll('.checkbox');
-    // amount are 14 input
+    // the function of checkboxes is for selected more of one option
+    // the function of const is
     const amounts = document.querySelectorAll('.amount');
-    //
+    // The querySelectorAll() method returns a list of all elements that match a specified CSS selector within an element or document.
+    // the function  of amount is for selected more of one  amount
     const subtotalElement = document.getElementById('subtotal');
     //
     checkboxes.forEach(checkbox => {
-        //
-        checkbox.addEventListener('change', updateSubtotal);
-    });
-    //
+        // the function of  for each is an iteration function for arrays in JavaScript that runs on each element of an array,
+        //allowing you to modify or process the information without affecting the original structure of the array.
+        // the function  of => {
+        checkbox.addEventListener('change',updateSubtotal);
+    // the function of ddEventListener is
+        // the function of  update subtotal is for It is to calculate the quantity of the products and update the total.
     amounts.forEach(amount => {
-        //
+        // .
         amount.addEventListener('input', updateSubtotal);
+    // the function of add event listener it is function  that executed when it passed in event.
     });
-    //
     function updateSubtotal() {
         //
         let subtotal = 0;
